@@ -5,24 +5,29 @@ import logo from './personal-color.png';
 import logo2 from './acceso-combos-desk.png';
 
 function App() {
-  const [codes, setCodes] = React.useState(['', '', '', '', '']);
+  const [codes, setCodes] = React.useState(['', '', '', '', '', '', '', '', '']);
   const [isValid, setIsValid] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
   const inputRefs = React.useRef([]);
 
   const handleInputChange = (index, e) => {
-    const value = e.target.value;
+    let value = e.target.value;
+    
+    // Asegurarse de que solo sea un dígito
+    value = value.slice(0, 1);
+  
     if (/\D/.test(value)) return;
-
+  
     const newCodes = [...codes];
     newCodes[index] = value;
-
+  
     setCodes(newCodes);
-
+  
     if (value !== '' && index < codes.length - 1) {
       inputRefs.current[index + 1].focus();
     }
   };
+  
 
   const handleValidation = () => {
     setIsLoading(true);
