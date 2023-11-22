@@ -19,6 +19,7 @@
   max-width: 400px;
   width: 100%;
   transition: all 0.3s ease-in-out;
+  z-index: 99;
 }
 
 .box:hover {
@@ -37,12 +38,14 @@
 }
 
 .tipo {
-  width: 500px; /* Ajusta el tamaño de la imagen según sea necesario */
+  width: 450px; /* Ajusta el tamaño de la imagen según sea necesario */
+  max-width: 30%;
+  min-width: 300px;
   height: auto;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   position: absolute;
   border-radius: 10px;
-  bottom: 10px;
+  bottom: 0px;
   right: 0px;
 }
 .code-inputs {
