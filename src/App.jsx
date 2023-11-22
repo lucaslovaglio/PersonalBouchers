@@ -40,12 +40,20 @@ function App() {
     }, 2000);
   };
 
+  const handleRefresh = () => {
+    setCodes(['', '', '', '', '', '', '', '', '']);
+    setIsValid(false);
+    setIsLoading(false);
+    // inputRefs.current[0].focus();
+  }
+
   return (
     <div className="container">
       <img src={logo} alt="Logo" className="logo" />
 
       <div className="box">
         <h2>Validar un Código de Personal:</h2>
+        {/* <button className='refreshButton' onClick={handleRefresh}>refresh</button> */}
         {!isValid && !isLoading ? (
           <div className="code-inputs">
             <div className="codeBox">
@@ -64,27 +72,43 @@ function App() {
                 />
               ))}
             </div>
+            {/* <div className='buttonBox'> */}
+            
             <Button
               variant="contained"
               color="primary"
               onClick={handleValidation}
               disabled={isLoading}
               endIcon={isLoading ? <CircularProgress size={20} color="inherit" /> : null}
+                // sx={{marginTop: '20px', width: 'min-content'}}
             >
               Validar
             </Button>
-          </div>
+            </div>
+          // </div>
         ) : isLoading ? (
           <div className="loader">
             <CircularProgress size={50} color="primary"  sx={{margin: '50px'}}/>
           </div>
         ) : (
+          <div className='succesContainer'>
           <div className='successBox'>
             <p>
               <b>Cupón Válido</b><br></br>
               Gracias por Validar el Descuento de Personal!
             </p>
           </div>
+          <Button
+          variant="contained"
+          color="primary"
+          onClick={handleRefresh}
+          disabled={isLoading}
+          endIcon={isLoading ? <CircularProgress size={20} color="inherit" /> : null}
+          sx={{width: 'min-content'}}
+        >
+          Reset
+        </Button>
+        </div>
         )}
       </div>
       <img src={logo2} alt="Logo2" className="tipo" />
