@@ -5,7 +5,7 @@ import logo from './personal-color.png';
 import logo2 from './acceso-combos-desk.png';
 
 function App() {
-  const [codes, setCodes] = React.useState(['', '', '', '', '', '', '', '', '']);
+  const [codes, setCodes] = React.useState(['', '', '']);
   const [isValid, setIsValid] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(false);
   const inputRefs = React.useRef([]);
@@ -41,7 +41,7 @@ function App() {
   };
 
   const handleRefresh = () => {
-    setCodes(['', '', '', '', '', '', '', '', '']);
+    setCodes(['', '', '']);
     setIsValid(false);
     setIsLoading(false);
     // inputRefs.current[0].focus();

@@ -23,6 +23,11 @@
   /* transition: width 0.3s ease-in-out; */
   z-index: 99;
   overflow: hidden;
+  display: flex;
+
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
 .box:hover {
@@ -77,6 +82,9 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
